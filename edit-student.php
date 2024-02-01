@@ -1,3 +1,25 @@
+<?php 
+   //create database connection
+
+   $id = $_GET['id'];
+
+   $conn = new mysqli("localhost", "dev", "devs", "student_db");
+   $sql = "SELECT * FROM students WHERE id=".$id."";
+   $result = $conn->query($sql); 
+
+   $data = $result->fetch_assoc();
+ 
+
+   
+    
+
+
+
+
+  
+  ?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -16,6 +38,8 @@
   <div class="container">
 
   <br>
+
+
   
     <form action="add-student.php" method="POST">
       <div class="row">
@@ -25,11 +49,11 @@
         <h3>Update Information</h3>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Firstname:</label>
-            <input name="firstname" type="text" class="form-control" />
+            <input value="<?php echo $data['firstname']; ?>" name="firstname" type="text" class="form-control" />
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Lastname:</label>
-            <input name="lastname" type="text" class="form-control" />
+            <input value="<?php echo $data['lastname']; ?>" name="lastname" type="text" class="form-control" />
           </div>
 
           <div class="mb-3">
