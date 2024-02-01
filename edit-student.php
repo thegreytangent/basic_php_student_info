@@ -14,11 +14,15 @@
 
 <body>
   <div class="container">
+
+  <br>
+  
     <form action="add-student.php" method="POST">
       <div class="row">
 
         <div class="col-lg-3"></div>
         <div class="col-lg-4">
+        <h3>Update Information</h3>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Firstname:</label>
             <input name="firstname" type="text" class="form-control" />
@@ -29,53 +33,13 @@
           </div>
 
           <div class="mb-3">
-            <button type="submit" class="btn btn-success">Add Record</button>
+            <button type="submit" class="btn btn-info">Update Record</button>
           </div>
 
         </div>
 
       </div>
     </form>
-
-
-    <?php
-    //create database connection
-    $conn = new mysqli("localhost", "dev", "devs", "student_db");
-
-    //construct sql state
-    $sql = 'SELECT * FROM students';
-
-    $result = $conn->query($sql);
-    ?>
-
-    <div class="row">
-      <table class="table table-border">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-
-          <?php while ($row = $result->fetch_assoc()) : ?>
-            <tr>
-              <td><?php echo $row['id'];  ?></td>
-              <td><?php echo $row['firstname'];  ?></td>
-              <td><?php echo $row['lastname'];  ?></td>
-              <td>
-                <a href="edit-student.php?id=<?php echo $row['id'];  ?>" class="btn btn-sm btn-info">Edit</a>
-                <button class="btn btn-sm btn-danger">Delete</button>
-              </td>
-            </tr>
-
-          <?php endwhile; ?>
-        </tbody>
-      </table>
-    </div>
-
 
   </div>
 
