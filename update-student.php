@@ -12,7 +12,7 @@ $lastname = $_POST['lastname'];
 $conn = new mysqli("localhost", "dev", "devs", "student_db");
 
 // SQL STATEMENT -> that can update the data in database
-$sql = "UPDATE students SET firstname='".$firstname ."',lastname='".$lastname."' WHERE id=17";
+$sql = "UPDATE students SET firstname='".$firstname ."',lastname='".$lastname."' WHERE id=".$id."";
 
 
 // is to run the sql code in php

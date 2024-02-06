@@ -16,7 +16,6 @@
   <div class="container">
     <form action="add-student.php" method="POST">
       <div class="row">
-
         <div class="col-lg-3"></div>
         <div class="col-lg-4">
           <div class="mb-3">
@@ -67,7 +66,7 @@
               <td><?php echo $row['lastname'];  ?></td>
               <td>
                 <a href="edit-student.php?id=<?php echo $row['id'];  ?>" class="btn btn-sm btn-info">Edit</a>
-                <button class="btn btn-sm btn-danger">Delete</button>
+                <a onclick="delete_student(<?php echo $row['id'];  ?>)" href="#" class="btn btn-sm btn-danger">Delete</a>
               </td>
             </tr>
 
@@ -88,5 +87,17 @@
 
 
 </body>
+
+<script>
+
+
+  function delete_student(id) {
+      if (confirm("Do you want to delete this data? ")){
+       swindow.location = "delete-student.php?id="+id;
+      }
+  }
+
+      
+</script>
 
 </html>
