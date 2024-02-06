@@ -59,7 +59,7 @@
         </thead>
         <tbody>
 
-          <?php while ($row = $result->fetch_assoc()) : ?>
+          <?php while ($row = $result->fetch_assoc()): ?>
             <tr>
               <td><?php echo $row['id'];  ?></td>
               <td><?php echo $row['firstname'];  ?></td>
