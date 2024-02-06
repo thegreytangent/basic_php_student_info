@@ -57,7 +57,10 @@
             <th scope="col">Game Name</th>
             <th scope="col">IGN</th>
             <th scope="col">Game Name</th>
-          </tr>
+          </tr>a
+
+
+          
         </thead>
         <tbody>
 
