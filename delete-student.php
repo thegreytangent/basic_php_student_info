@@ -14,6 +14,5 @@ $sql = "DELETE FROM students WHERE id=".$id."";
 // is to run the sql code in php
 $conn->query($sql);
 
-//redirect
 header('location: index.php');
 
